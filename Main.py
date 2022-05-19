@@ -32,14 +32,14 @@ def start(update: Update, context: CallbackContext) -> int:
     # uma lista (daí `[[...]]`)
     keyboard = [
         [
-            InlineKeyboardButton("Packs", callback_data=str(PACKS)),
-            InlineKeyboardButton("Videos", callback_data=str(VIDEOS)),
-            InlineKeyboardButton("Chamadas", callback_data=str(CHAMADAS)),
+            InlineKeyboardButton("/", callback_data=str(PACKS)),
+            InlineKeyboardButton(".", callback_data=str(VIDEOS)),
+            InlineKeyboardButton(",", callback_data=str(CHAMADAS)),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     # Enviar mensagem com texto e InlineKeyboard anexado
-    update.message.reply_text("🔥Bem vindo aos preços da Kit🔥\n\n Vai se masturba pra mim? quero te fazer gozar. \n\n que jeito você vai escolher?", reply_markup=reply_markup)
+    update.message.reply_text("", reply_markup=reply_markup)
     # Diga ao ConversationHandler que estamos no estado `FIRST` agora
     return FIRST
 
@@ -53,16 +53,16 @@ def start_over(update: Update, context: CallbackContext) -> int:
     query.answer()
     keyboard = [
         [
-            InlineKeyboardButton("Packs", callback_data=str(PACKS)),
-            InlineKeyboardButton("Videos", callback_data=str(VIDEOS)),
-            InlineKeyboardButton("Chamadas", callback_data=str(CHAMADAS)),
+            InlineKeyboardButton("/", callback_data=str(PACKS)),
+            InlineKeyboardButton(".", callback_data=str(VIDEOS)),
+            InlineKeyboardButton(",", callback_data=str(CHAMADAS)),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     # Em vez de enviar uma nova mensagem, edite a mensagem que
     # originou o CallbackQuery. Isso dá a sensação de um
     # menu interativo.
-    query.edit_message_text(text="🔥Bem vindo aos preços da Kit🔥\n\n Vai se masturba pra mim? quero te fazer gozar. \n\n que jeito você vai escolher?", reply_markup=reply_markup)
+    query.edit_message_text(text="", reply_markup=reply_markup)
     return FIRST
 
 
@@ -72,13 +72,13 @@ def packs(update: Update, context: CallbackContext) -> int:
     query.answer()
     keyboard = [
         [
-            InlineKeyboardButton("Delicinha", callback_data=str(PACK_D)),
-            InlineKeyboardButton("Safadinha", callback_data=str(PACK_S)),
+            InlineKeyboardButton("/", callback_data=str(PACK_D)),
+            InlineKeyboardButton(".", callback_data=str(PACK_S)),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="🍒Então você quer uma pack!!🍒 \n\n Explicando: \nA pack Delicinha tem 4 fotos e 2 videos \nA pack Safadinha tem 8 fotos e 4 videos (esse dois deles eu uso brinquedinhos)", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     return FIRST
 
@@ -89,13 +89,13 @@ def videos(update: Update, context: CallbackContext) -> int:
     query.answer()
     keyboard = [
         [
-            InlineKeyboardButton("Delicinha", callback_data=str(VIDEOS_D)),
-            InlineKeyboardButton("Safadinha", callback_data=str(VIDEOS_S)),
+            InlineKeyboardButton("/", callback_data=str(VIDEOS_D)),
+            InlineKeyboardButton(".", callback_data=str(VIDEOS_S)),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="🍒Então você quer uma Video!!🍒 \n\n Explicando: \nO video Delicinha tem 1 videos comigo me masturbando por 3min \n\nO video Safadinha 1 video comigo usando brinquedinhos por 3min", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     return FIRST
 
@@ -106,13 +106,13 @@ def chamada(update: Update, context: CallbackContext) -> int:
     query.answer()
     keyboard = [
         [
-            InlineKeyboardButton("Chamadas hot", callback_data=str(CHAMADAS_H)),
-            InlineKeyboardButton("Chamadas premium", callback_data=str(CHAMADAS_P)),
+            InlineKeyboardButton("/", callback_data=str(CHAMADAS_H)),
+            InlineKeyboardButton(".", callback_data=str(CHAMADAS_P)),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="🍒Então você quer uma Chamada!!🍒 \n\n Que safadinho\n\n Explicando: \nA chamada hot são 3min comigo rebolando e me masturbando \n\nA chamada premium são 3min comigo rebolando com brinquedinhos", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     return FIRST
 
@@ -128,7 +128,7 @@ def packD(update: Update, context: CallbackContext) -> int:
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="😈Pack Delicinha😈 \n\n Por 15$ te dou uma delicinha \n\n Já to me Deliciando com o tesão que eu quero te dar", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     return SECOND
 
@@ -145,7 +145,7 @@ def packS(update: Update, context: CallbackContext) -> int:
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="😈Pack Safadinha😈 \n\n Por 25$ te mostro uma safadesa \n\n Você quer ver o quanto eu posso ser safada?", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     return FIRST
 
@@ -162,7 +162,7 @@ def videosD(update: Update, context: CallbackContext) -> int:
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="😈Video Delicinha😈 \n\n Por 25$ te dou um video delicinha de 3min \n\n Já to querendo te deixar louquinho de tesão", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     return SECOND
 
@@ -179,7 +179,7 @@ def videosS(update: Update, context: CallbackContext) -> int:
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="😈Video Safadinha😈 \n\n Por 35$ te dou um video safado de 3min \n\n Você quer ver o quanto eu posso ser safada?", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     return SECOND
 
@@ -195,7 +195,7 @@ def chamadaH(update: Update, context: CallbackContext) -> int:
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="😈Chamada hot😈 \n\n Por 15$ a gente brinca por 3min \n\n Já to querendo te deixar louquinho de tesão", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     return SECOND
 
@@ -212,7 +212,7 @@ def chamadaP(update: Update, context: CallbackContext) -> int:
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="😈Chamada premium😈 \n\n Por 25$ a gente brinca por 3min \n\n Quero que você veja como meus brinquedos são safados", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     return SECOND
 
@@ -229,7 +229,7 @@ def endend(update: Update, context: CallbackContext) -> int:
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     query.edit_message_text(
-        text="🍒😈 Que otima escolha 😈🍒 \n\nMeu Pix: supermercadokitsune@gmail.com \nManda no meu chat o que você comprou\ne o comprovante de pagamento \n\n to esperando por você", reply_markup=reply_markup
+        text="", reply_markup=reply_markup
     )
     # Transfer to conversation state `SECOND`
     return THIRD
