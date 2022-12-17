@@ -21,8 +21,6 @@ Utilizando apenas **PYTHON** e as bibliotecas:
 
 ### 🤝 Suporte/Contato
 
-### 🤝 Suporte/Contato
-
 [![Whatsapp Badge](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5511951864397)
 [![Linktree Badge](https://img.shields.io/badge/linktree-39E09B?style=for-the-badge&logo=linktree&logoColor=white)](https://linktr.ee/mrmichelerocha)
 [![Instagram Badge](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/mr.michelerocha/?hl=pt-br)
